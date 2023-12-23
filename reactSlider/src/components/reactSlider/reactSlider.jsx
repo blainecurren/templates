@@ -1,3 +1,6 @@
+import { useState } from "react";
+import "./works.scss";
+
 export default function ReactSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
