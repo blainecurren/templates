@@ -1,4 +1,4 @@
-export default function reactSlider() {
+export default function ReactSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
