@@ -1,11 +1,25 @@
 import "./login.css";
 import { FaUser, FaLock } from "react-icons/fa";
+import { useMsal } from "@azure/msal-react";
+import { loginRequest } from "./.auth.config";
 
 const Login = () => {
+  const instance = useMsal();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await instance(loginRequest);
+      console.log("Login Successful", response);
+    } catch (error) {
+      console.error("Login failed", error);
+    } // TODO: Handle error cases, such as network errors or invalid credentials.
+  };
+
   return (
     <div className="wrapper">
       <div>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <h1>Login</h1>
           <div className="input-box">
             <input type="text" placeholder="Username" required />
