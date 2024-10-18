@@ -1,7 +1,7 @@
 import "./login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useMsal } from "@azure/msal-react";
-import { loginRequest } from "./.auth.config";
+import { loginRequest } from "../../auth.config.js";
 
 const Login = () => {
   const instance = useMsal();
